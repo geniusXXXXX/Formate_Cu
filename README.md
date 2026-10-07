@@ -72,6 +72,16 @@ Formate_Cu/
     └── README.md
 ```
 
+## Dataset distributions
+
+The original DFT dataset was inspected before model training to understand the sampled energy and force ranges.
+
+![DFT energy distribution](results/energy_distribution.png)
+
+![Force distribution](results/force_distribution.png)
+
+![Force distribution below 10 eV/A](results/force_distribution_below10.png)
+
 ## Key dataset checks completed
 
 - 6,855 configurations
@@ -87,6 +97,12 @@ The training workflow used NequIP 0.19.1 with PyTorch on an NVIDIA Tesla T4 GPU 
 
 The formal model used an E(3)-equivariant NequIP architecture with a 5 Å cutoff and atomic species C, H, O, and Cu. Training was monitored using validation force MAE, and the best checkpoint was packaged and compiled for ASE inference.
 
+## Training convergence
+
+![Validation force MAE](results/validation_force_mae.png)
+
+![Validation energy MAE](results/validation_energy_mae.png)
+
 ## Validation result
 
 At the best epoch:
@@ -97,6 +113,16 @@ At the best epoch:
 - validation total-energy MAE: 0.0231 eV/structure
 
 Validation and test errors are very similar, indicating that the trained model generalizes consistently to the held-out test set.
+
+## Independent test-set parity plots
+
+![Test energy parity](results/test_energy_parity.png)
+
+![Test force parity](results/test_force_parity.png)
+
+## Colab notebook
+
+The executed Google Colab workflow is available at [notebooks/nequip_training_colab.ipynb](notebooks/nequip_training_colab.ipynb). It records the training, packaging, compilation, and final evaluation workflow used in this project.
 
 ## Reproducibility notes
 
