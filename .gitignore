@@ -1,0 +1,20 @@
+# Raw datasets and large generated files
+*.xyz
+*.ckpt
+*.pt2
+*.nequip.zip
+
+# Training outputs
+outputs/
+lightning_logs/
+csv_logs/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
