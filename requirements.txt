@@ -1,0 +1,8 @@
+ase
+numpy
+pandas
+matplotlib
+torch
+nequip
+e3nn
+lightning
